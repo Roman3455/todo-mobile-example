@@ -85,3 +85,5 @@ module.exports = defineConfig([
   "bracketSameLine": true
 }
 ```
+
+### 4. Добавление Makefile в корень проекта
