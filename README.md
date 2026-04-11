@@ -87,3 +87,85 @@ module.exports = defineConfig([
 ```
 
 ### 4. Добавление Makefile в корень проекта
+
+### 5. Установка **Expo Router**
+
+- Установить зависимости:
+
+```bash
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+```
+
+- Установить точку входа в `package.json`:
+
+```json
+{
+  "main": "expo-router/entry"
+}
+```
+
+- Внести изменения в `app.json`:
+
+```json
+{
+  "scheme": "your-app-scheme",
+  "experiments": {
+    "typedRoutes": true
+  }
+}
+```
+
+- Сконфигурировать **path aliases** в `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+}
+```
+
+- Создать директории `src/app` и пометить `/src` как `resource root`;
+
+- Создать в `/app` файл `index.tsx`:
+
+```tsx
+import {Stack} from "expo-router";
+
+export default function RootLayout() {
+  return (
+    <Stack screenOptions={{headerShown: false, animation: "default"}} />
+  );
+}
+```
+
+- Создать в `/app` файл `_layout.tsx`:
+
+```tsx
+import {StyleSheet, Text, View} from "react-native";
+import {StatusBar} from "expo-status-bar";
+
+export default function HomeScreen() {
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+```
+
+- Удалить `App.tsx` & `index.ts`;
