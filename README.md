@@ -1,5 +1,15 @@
 # Mobile ToDo example app
 
+## Стек технологий
+
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
+
+- React Native: `0.81`
+- Typescript: `5.9`
+- Expo: `54`
+
 ## Инициализация
 
 ### 1. Шаблон проекта **React Native + Expo** на TS
@@ -95,6 +105,17 @@ module.exports = defineConfig([
 ```bash
 npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
 ```
+
+- `expo-router` — файловый роутер для Expo (позволяет строить навигацию через структуру файлов).
+- `react-native-safe-area-context` — управление safe areas. Safe area — это зоны экрана, которые нельзя перекрывать UI,
+Без этого UI может залезать под системные элементы.
+- `react-native-screens` — оптимизация навигации. Это делает переходы между экранами быстрее.
+- `expo-linking` — работа с deep links. Deep link — это ссылка, которая открывает конкретный экран приложения.
+Expo Router использует его внутри для маршрутизации.
+- `expo-constants` — доступ к системной информации приложения. Позволяет получать: app version, Expo config,
+device info, environment.
+- `expo-status-bar` — управление статус баром. Status bar — это верхняя панель устройства: время, батарея, сеть.
+Позволяет менять: цвет, стиль, прозрачность.
 
 - Установить точку входа в `package.json`:
 
