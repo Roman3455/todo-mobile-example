@@ -77,11 +77,11 @@ const expoConfig = require("eslint-config-expo/flat");
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 
 module.exports = defineConfig([
-   expoConfig,
-   eslintPluginPrettierRecommended,
-   {
-      ignores: ["dist/*"],
-   },
+  expoConfig,
+  eslintPluginPrettierRecommended,
+  {
+    ignores: ["dist/*"],
+  },
 ]);
 ```
 
@@ -108,14 +108,14 @@ npx expo install expo-router react-native-safe-area-context react-native-screens
 
 - `expo-router` — файловый роутер для Expo (позволяет строить навигацию через структуру файлов).
 - `react-native-safe-area-context` — управление safe areas. Safe area — это зоны экрана, которые нельзя перекрывать UI,
-Без этого UI может залезать под системные элементы.
+  Без этого UI может залезать под системные элементы.
 - `react-native-screens` — оптимизация навигации. Это делает переходы между экранами быстрее.
 - `expo-linking` — работа с deep links. Deep link — это ссылка, которая открывает конкретный экран приложения.
-Expo Router использует его внутри для маршрутизации.
+  Expo Router использует его внутри для маршрутизации.
 - `expo-constants` — доступ к системной информации приложения. Позволяет получать: app version, Expo config,
-device info, environment.
+  device info, environment.
 - `expo-status-bar` — управление статус баром. Status bar — это верхняя панель устройства: время, батарея, сеть.
-Позволяет менять: цвет, стиль, прозрачность.
+  Позволяет менять: цвет, стиль, прозрачность.
 
 - Установить точку входа в `package.json`:
 
@@ -155,20 +155,18 @@ device info, environment.
 - Создать в `/app` файл `index.tsx`:
 
 ```tsx
-import {Stack} from "expo-router";
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
-  return (
-    <Stack screenOptions={{headerShown: false, animation: "default"}} />
-  );
+  return <Stack screenOptions={{ headerShown: false, animation: "default" }} />;
 }
 ```
 
 - Создать в `/app` файл `_layout.tsx`:
 
 ```tsx
-import {StyleSheet, Text, View} from "react-native";
-import {StatusBar} from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 export default function HomeScreen() {
   return (
@@ -182,11 +180,19 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 ```
 
 - Удалить `App.tsx` & `index.ts`;
+
+### 6. Подключение поддержки SVG
+
+- Установить зависимости:
+
+```bash
+npx expo install react react-dom react-native-web react-native-svg
+```
