@@ -217,3 +217,60 @@ npx expo install react react-dom react-native-web react-native-svg
   }
 }
 ```
+
+### 2. Создание дизайн-токенов
+
+- Создать файлы типа `themes.ts`, `typography.ts`, `spacing.ts`, `shadows.ts` и пр. в директории
+  `src/shared/theme/configs`;
+
+- Пример цветовой схемы `themes.ts`:
+
+```ts
+export const lightTheme = {
+  mode: "light",
+  colors: {
+    background: "#e5ebf3",
+    accent: "#00b8d7",
+  }
+}
+export const darkTheme = {
+  mode: "dark",
+  colors: {
+    background: "#2D2F36",
+    accent: "#00b8d7",
+  }
+}
+export type AppTheme = typeof lightTheme;
+```
+
+- `mode` — семантический флаг темы (**"light"** | **"dark"**), используется для переключения UI и логики
+  (например, статусбар, иконки);
+- `colors` — токены (design tokens), которые будут браться для стилизации;
+- также сюда можно добавить тени и прочие элементы, которые зависят от темы;
+
+- Тип темы:
+
+```ts
+export type AppTheme = typeof lightTheme;
+```
+
+- `typeof lightTheme` → TypeScript извлекает структуру объекта;
+- `AppTheme` становится типом:
+
+```ts
+type AppTheme = {
+  mode: string;
+  colors: {
+    background: string;
+    accent: string;
+  };
+};
+```
+
+- `AppTheme` — это контракт, которому должны соответствовать все темы.
+
+**Итог**
+- `lightTheme` / `darkTheme` — конкретные реализации;
+- `AppTheme` — тип-контракт;
+- `typeof` — связывает runtime и типы;
+- `as const` — делает типизацию строгой.

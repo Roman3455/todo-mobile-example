@@ -1,18 +1,7 @@
-import { fontSize, fontWeight, lineHeight } from "./typography";
-import { lightMode, darkMode } from "./colors";
-import { shadows } from "./shadows";
-import { components } from "./components";
-import { spacing } from "./spacing";
+export { components } from "./configs/components";
+export { shadows } from "./configs/shadows";
+export { spacing } from "./configs/spacing";
+export { lightTheme, darkTheme } from "./configs/themes";
+export { fontSize, fontWeight, lineHeight } from "./configs/typography";
 
-export const theme = {
-  spacing,
-  lightMode,
-  darkMode,
-  shadows,
-  fontSize,
-  fontWeight,
-  lineHeight,
-  components,
-} as const;
-
-export type AppTheme = typeof theme;
+export type { AppTheme } from "./configs/themes";
