@@ -274,3 +274,26 @@ type AppTheme = {
 - `AppTheme` — тип-контракт;
 - `typeof` — связывает runtime и типы;
 - `as const` — делает типизацию строгой.
+
+### 3. Создание Theme Context
+
+`ThemeContext` — это глобальный механизм доступа к теме приложения (**light** / **dark**), основанный на
+системной настройке устройства.
+
+Решает задачи:
+- централизованного доступа к design tokens;
+- автоматического переключения темы;
+- устранения prop drilling.
+
+- Создать `theme-context.ts` в директории `src/shared/theme/model`;
+
+```tsx
+import { createContext } from "react";
+import { AppTheme, lightTheme } from "@/shared/theme";
+
+export const ThemeContext = createContext<AppTheme>(lightTheme);
+```
+
+- Создает глобальный контекст;
+- Тип: `AppTheme` (контракт темы);
+- `lightTheme` — fallback (если Provider отсутствует).
