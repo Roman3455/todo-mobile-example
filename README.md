@@ -324,3 +324,11 @@ const theme = useMemo(() => {
   return scheme === "dark" ? darkTheme : lightTheme;
 }, [scheme]);
 ```
+
+### 5. **useTheme** hook
+
+Предоставляет типобезопасный доступ к объекту темы (`AppTheme`).
+
+```ts
+export const useTheme = () => useContext(ThemeContext);
+```
