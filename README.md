@@ -332,3 +332,21 @@ const theme = useMemo(() => {
 ```ts
 export const useTheme = () => useContext(ThemeContext);
 ```
+
+### 6. Подключение ThemeProvider
+
+Для использования `ThemeProvider` в приложении необходимо обернуть **RootLayout** в него.
+
+```tsx
+export default function RootLayout() {
+  const scheme = useColorScheme();
+  return (
+          <SafeAreaProvider>
+            <ThemeProvider>
+              <StatusBar style={scheme === "dark" ? "light" : "dark"} />
+              <Stack screenOptions={{ headerShown: false }} />
+            </ThemeProvider>
+          </SafeAreaProvider>
+  );
+}
+```
