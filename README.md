@@ -297,3 +297,30 @@ export const ThemeContext = createContext<AppTheme>(lightTheme);
 - Создает глобальный контекст;
 - Тип: `AppTheme` (контракт темы);
 - `lightTheme` — fallback (если Provider отсутствует).
+
+### 4. Theme Provider
+
+**Отвечает за определение и передачу актуальной темы (light / dark) во всё дерево компонентов через
+ThemeContext.**
+
+Источник темы:
+- Использует `useColorScheme()` из React Native для получения системной темы устройства.
+- При изменении системной темы происходит автоматический перерасчёт значения.
+
+```ts
+const scheme = useColorScheme();
+```
+
+`useColorScheme()` — хук из React Native:
+- `light` → светлая тема;
+- `dark` → темная тема;
+- `null` → не определено (редко, но бывает).
+
+Оптимизация:
+- `useMemo` предотвращает лишние перерасчёты и ререндеры, мемоизируя объект темы до изменения `scheme`.
+
+```ts
+const theme = useMemo(() => {
+  return scheme === "dark" ? darkTheme : lightTheme;
+}, [scheme]);
+```
