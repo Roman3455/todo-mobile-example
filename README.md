@@ -350,3 +350,53 @@ export default function RootLayout() {
   );
 }
 ```
+
+### 7. Фабрика стилей
+
+`createThemedStyles` — фабрика для создания theme-aware StyleSheet-хуков.
+
+```tsx
+export function createThemedStyles<T extends StyleSheet.NamedStyles<T>>(
+  factory: (theme: AppTheme) => T,
+) {
+  return function useThemedStyles() {
+    const theme = useTheme();
+
+    return useMemo(() => {
+      return StyleSheet.create(factory(theme));
+    }, [theme]);
+  };
+}
+```
+
+- `createThemedStyles(...)` вызывается вне компонента;
+- `useThemedStyles()` вызывается внутри компонента, как обычный хук;
+- Стили обновятся при смене темы, если `ThemeProvider` отдаст новое значение.
+
+### 8. Применение стилей
+
+- Создание StyleSheet в отдельном файле;
+
+```ts
+export const useHomeScreenStyles = createThemedStyles((theme) => ({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "flex-start",
+    paddingHorizontal: spacing.lg,
+    backgroundColor: theme.colors.background
+  }
+}));
+```
+
+- Использование StyleSheet в UI компоненте.
+
+```tsx
+export default function HomeScreen() {
+  const styles = useHomeScreenStyles();
+
+  return (
+    <View style={ styles.container }></View>
+  );
+}
+```
