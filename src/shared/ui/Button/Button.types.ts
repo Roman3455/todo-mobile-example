@@ -5,4 +5,4 @@ export type ButtonProps = PressableProps & {
   children: ReactNode;
   buttonStyle?: StyleProp<ViewStyle>;
   buttonType?: "primary" | "secondary";
-}
+};

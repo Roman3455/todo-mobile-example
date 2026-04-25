@@ -1,7 +1,7 @@
 import { View } from "react-native";
-import {TodoItem} from "@/entities/TodoItem";
-import {TodoListProps} from "@/features/display-tasks/TodoList.types";
-import {useTodoListStyles} from "@/features/display-tasks/TodoList.styles";
+import { TodoItem } from "@/entities/TodoItem";
+import { TodoListProps } from "@/features/display-tasks/TodoList.types";
+import { useTodoListStyles } from "@/features/display-tasks/TodoList.styles";
 
 export default function TodoList(props: TodoListProps) {
   const { tasks } = props;

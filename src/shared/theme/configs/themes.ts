@@ -23,9 +23,9 @@ export const lightTheme = {
     todoItemTextDone: colors.aquaGray,
     todoItemToggleBorderUndone: colors.aqua["400"],
     todoItemToggleBackgroundDone: colors.aqua["300"],
-    todoItemDeleteButton: colors.aqua["400"]
-  }
-}
+    todoItemDeleteButton: colors.aqua["400"],
+  },
+};
 
 // Реализация темной темы
 export const darkTheme = {
@@ -50,9 +50,9 @@ export const darkTheme = {
     todoItemTextDone: colors.aquaGray,
     todoItemToggleBorderUndone: colors.aqua["400"],
     todoItemToggleBackgroundDone: colors.aqua["300"],
-    todoItemDeleteButton: colors.aqua["400"]
-  }
-}
+    todoItemDeleteButton: colors.aqua["400"],
+  },
+};
 
 // Контракт по типам темы
 export type AppTheme = typeof lightTheme;

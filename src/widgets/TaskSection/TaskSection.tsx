@@ -8,7 +8,7 @@ export default function TaskSection() {
   const tasks: Todo[] = [
     { id: "task-1", title: "Убрать лоток", isDone: false },
     { id: "task-2", title: "Погладить кота", isDone: true },
-    { id: "task-3", title: "Покормить кота", isDone: true }
+    { id: "task-3", title: "Покормить кота", isDone: true },
   ];
   const styles = useTaskSectionStyles();
 

@@ -5,6 +5,6 @@ export const useAddTaskFormStyles = createThemedStyles((theme) => ({
   buttonLabel: {
     fontSize: fontSize.lg,
     fontWeight: fontWeight.semibold,
-    color: theme.colors.buttonPrimaryText
-  }
+    color: theme.colors.buttonPrimaryText,
+  },
 }));

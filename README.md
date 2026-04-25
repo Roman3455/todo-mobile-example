@@ -204,7 +204,7 @@ npx expo install react react-dom react-native-web react-native-svg
 
 ## Светлая и темная темы
 
-*Здесь рассматривается не пользовательское, а системное переключение светлой и темной темы.*
+_Здесь рассматривается не пользовательское, а системное переключение светлой и темной темы._
 
 ### 1. Настройка **app.json**
 
@@ -231,15 +231,15 @@ export const lightTheme = {
   colors: {
     background: "#e5ebf3",
     accent: "#00b8d7",
-  }
-}
+  },
+};
 export const darkTheme = {
   mode: "dark",
   colors: {
     background: "#2D2F36",
     accent: "#00b8d7",
-  }
-}
+  },
+};
 export type AppTheme = typeof lightTheme;
 ```
 
@@ -270,6 +270,7 @@ type AppTheme = {
 - `AppTheme` — это контракт, которому должны соответствовать все темы.
 
 **Итог**
+
 - `lightTheme` / `darkTheme` — конкретные реализации;
 - `AppTheme` — тип-контракт;
 - `typeof` — связывает runtime и типы;
@@ -281,6 +282,7 @@ type AppTheme = {
 системной настройке устройства.
 
 Решает задачи:
+
 - централизованного доступа к design tokens;
 - автоматического переключения темы;
 - устранения prop drilling.
@@ -304,6 +306,7 @@ export const ThemeContext = createContext<AppTheme>(lightTheme);
 ThemeContext.**
 
 Источник темы:
+
 - Использует `useColorScheme()` из React Native для получения системной темы устройства.
 - При изменении системной темы происходит автоматический перерасчёт значения.
 
@@ -312,11 +315,13 @@ const scheme = useColorScheme();
 ```
 
 `useColorScheme()` — хук из React Native:
+
 - `light` → светлая тема;
 - `dark` → темная тема;
 - `null` → не определено (редко, но бывает).
 
 Оптимизация:
+
 - `useMemo` предотвращает лишние перерасчёты и ререндеры, мемоизируя объект темы до изменения `scheme`.
 
 ```ts
@@ -341,12 +346,12 @@ export const useTheme = () => useContext(ThemeContext);
 export default function RootLayout() {
   const scheme = useColorScheme();
   return (
-          <SafeAreaProvider>
-            <ThemeProvider>
-              <StatusBar style={scheme === "dark" ? "light" : "dark"} />
-              <Stack screenOptions={{ headerShown: false }} />
-            </ThemeProvider>
-          </SafeAreaProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <StatusBar style={scheme === "dark" ? "light" : "dark"} />
+        <Stack screenOptions={{ headerShown: false }} />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
 ```
@@ -384,8 +389,8 @@ export const useHomeScreenStyles = createThemedStyles((theme) => ({
     alignItems: "center",
     justifyContent: "flex-start",
     paddingHorizontal: spacing.lg,
-    backgroundColor: theme.colors.background
-  }
+    backgroundColor: theme.colors.background,
+  },
 }));
 ```
 
@@ -395,8 +400,6 @@ export const useHomeScreenStyles = createThemedStyles((theme) => ({
 export default function HomeScreen() {
   const styles = useHomeScreenStyles();
 
-  return (
-    <View style={ styles.container }></View>
-  );
+  return <View style={styles.container}></View>;
 }
 ```

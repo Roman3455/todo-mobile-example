@@ -5,6 +5,6 @@ export const useHomeScreenStyles = createThemedStyles((theme) => ({
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
-    backgroundColor: theme.colors.background
-  }
+    backgroundColor: theme.colors.background,
+  },
 }));

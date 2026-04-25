@@ -9,7 +9,7 @@ export default function InputSection() {
   return (
     <View style={styles.container}>
       <View style={styles.headerRadiusContainer}>
-        <View style={ [styles.headerRadiusContainer, styles.headerRadius] }/>
+        <View style={[styles.headerRadiusContainer, styles.headerRadius]} />
       </View>
       <AddTaskForm />
       <SearchTaskForm />

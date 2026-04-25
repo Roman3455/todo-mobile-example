@@ -11,7 +11,6 @@ export const useTodoItemStyles = createThemedStyles((theme) => ({
     borderRadius: radius.xl,
     borderWidth: 1,
     gap: spacing.md,
-
   },
   done: {
     backgroundColor: theme.colors.todoItemBackgroundDone,
@@ -19,8 +18,7 @@ export const useTodoItemStyles = createThemedStyles((theme) => ({
   },
   undone: {
     backgroundColor: theme.colors.todoItemBackgroundUndone,
-    borderColor: theme.colors.todoItemBorderUndone
-
+    borderColor: theme.colors.todoItemBorderUndone,
   },
   title: {
     flexGrow: 1,
@@ -28,9 +26,9 @@ export const useTodoItemStyles = createThemedStyles((theme) => ({
   },
   titleDone: {
     color: theme.colors.todoItemTextDone,
-    textDecorationLine: "line-through"
+    textDecorationLine: "line-through",
   },
   titleUndone: {
-    color: theme.colors.todoItemTextUndone
-  }
+    color: theme.colors.todoItemTextUndone,
+  },
 }));

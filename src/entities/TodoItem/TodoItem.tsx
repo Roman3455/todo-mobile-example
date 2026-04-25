@@ -8,11 +8,9 @@ export default function TodoItem(props: Todo) {
   const { title, isDone } = props;
   const styles = useTodoItemStyles();
   return (
-    <View style={ [ styles.container, isDone ? styles.done : styles.undone ] }>
+    <View style={[styles.container, isDone ? styles.done : styles.undone]}>
       <TodoToggle isDone={isDone} />
-      <Text style={ [styles.title, isDone ? styles.titleDone : styles.titleUndone] }>
-        {title}
-      </Text>
+      <Text style={[styles.title, isDone ? styles.titleDone : styles.titleUndone]}>{title}</Text>
       <TodoDeleteButton />
     </View>
   );

@@ -19,7 +19,7 @@ export const colors = {
     600: "#4DB3B3",
     700: "#3F9292",
     800: "#317272",
-    900: "#235252"
+    900: "#235252",
   },
   gray: {
     0: "#FFFFFF",
@@ -33,7 +33,7 @@ export const colors = {
     700: "#525252",
     800: "#3B3B3B",
     900: "#242424",
-    950: "#0D0D0D"
+    950: "#0D0D0D",
   },
-  aquaGray: "#AFCCCC"
+  aquaGray: "#AFCCCC",
 } as const;

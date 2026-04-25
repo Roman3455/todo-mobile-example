@@ -9,15 +9,13 @@ export default function InputField(props: InputFieldProps) {
   const theme = useTheme();
 
   return (
-    <View style={ [styles.container, containerStyle] }>
+    <View style={[styles.container, containerStyle]}>
       <TextInput
-        style={ [styles.input, inputStyle] }
-        placeholderTextColor={ theme.colors.inputPlaceholder }
+        style={[styles.input, inputStyle]}
+        placeholderTextColor={theme.colors.inputPlaceholder}
         {...rest}
       />
-      {adornment
-        ? (<View style={ [styles.adornment, adornmentStyle] }>{adornment}</View>)
-        : null}
+      {adornment ? <View style={[styles.adornment, adornmentStyle]}>{adornment}</View> : null}
     </View>
   );
 }

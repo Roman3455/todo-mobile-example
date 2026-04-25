@@ -2,11 +2,7 @@ import Svg, { Path } from "react-native-svg";
 import { SVGIconType } from "./icon.types";
 
 export default function PlusIcon(props: SVGIconType) {
-  const {
-    size = 24,
-    strokeWidth = 1,
-    strokeColor = "#757575",
-  } = props;
+  const { size = 24, strokeWidth = 1, strokeColor = "#757575" } = props;
   return (
     <Svg
       {...props}
@@ -17,8 +13,7 @@ export default function PlusIcon(props: SVGIconType) {
       width={size}
       height={size}
       strokeWidth={strokeWidth}
-      stroke={strokeColor}
-    >
+      stroke={strokeColor}>
       <Path d="M4 12H20M12 4V20" />
     </Svg>
   );

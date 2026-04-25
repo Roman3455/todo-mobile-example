@@ -41,9 +41,5 @@ export function ThemeProvider(props: ThemeProps) {
     return scheme === "dark" ? darkTheme : lightTheme;
   }, [scheme]);
 
-  return (
-    <ThemeContext.Provider value={theme}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>;
 }

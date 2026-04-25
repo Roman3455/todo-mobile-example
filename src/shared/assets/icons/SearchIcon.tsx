@@ -2,11 +2,7 @@ import Svg, { Path } from "react-native-svg";
 import { SVGIconType } from "./icon.types";
 
 export default function SearchIcon(props: SVGIconType) {
-  const {
-    size = 24,
-    strokeWidth = 1,
-    strokeColor = "#757575",
-  } = props;
+  const { size = 24, strokeWidth = 1, strokeColor = "#757575" } = props;
   return (
     <Svg
       {...props}
@@ -17,8 +13,7 @@ export default function SearchIcon(props: SVGIconType) {
       width={size}
       height={size}
       strokeWidth={strokeWidth}
-      stroke={strokeColor}
-    >
+      stroke={strokeColor}>
       <Path
         d="M14 14L11.1 11.1M12.6667 7.33333C12.6667 10.2789 10.2789 12.6667 7.33333 12.6667C4.38781 12.6667
           2 10.2789 2 7.33333C2 4.38781 4.38781 2 7.33333 2C10.2789 2 12.6667 4.38781 12.6667 7.33333Z"

@@ -1,8 +1,8 @@
-import {SvgProps} from "react-native-svg";
+import { SvgProps } from "react-native-svg";
 
 export type SVGIconType = SvgProps & {
-  size?: number,
-  strokeWidth?: number,
+  size?: number;
+  strokeWidth?: number;
   strokeColor?: string;
   fillColor?: string;
-}
+};

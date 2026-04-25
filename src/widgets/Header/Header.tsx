@@ -8,10 +8,7 @@ export default function Header() {
   const styles = useHeaderStyles();
 
   return (
-    <View style={[
-      styles.container,
-      { paddingTop: insets.top + spacing.xl }
-    ]}>
+    <View style={[styles.container, { paddingTop: insets.top + spacing.xl }]}>
       <Text style={styles.title}>Daily Planner</Text>
     </View>
   );

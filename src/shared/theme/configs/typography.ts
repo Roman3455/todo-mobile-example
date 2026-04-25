@@ -14,5 +14,5 @@ export const fontWeight = {
 
 export const lineHeight = {
   xl: 30,
-  xxl: 36
+  xxl: 36,
 } as const;

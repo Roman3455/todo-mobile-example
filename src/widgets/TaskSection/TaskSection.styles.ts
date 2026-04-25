@@ -5,6 +5,6 @@ export const useTaskSectionStyles = createThemedStyles(() => ({
   container: {
     alignSelf: "stretch",
     paddingHorizontal: spacing.lg,
-    gap: spacing.lg
-  }
+    gap: spacing.lg,
+  },
 }));

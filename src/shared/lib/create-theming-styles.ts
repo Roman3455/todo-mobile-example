@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { StyleSheet } from "react-native";
 import { useTheme } from "@/shared/theme/lib";
 
-import type {AppTheme} from "@/shared/theme";
+import type { AppTheme } from "@/shared/theme";
 
 /**
  * createThemedStyles — фабрика для создания theme-aware StyleSheet-хуков.
@@ -52,7 +52,9 @@ import type {AppTheme} from "@/shared/theme";
  * - `useThemedStyles()` вызывается внутри компонента, как обычный хук
  * - Стили обновятся при смене темы, если `ThemeProvider` отдаст новое значение
  */
-export function createThemedStyles<T extends StyleSheet.NamedStyles<T>>(factory: (theme: AppTheme) => T) {
+export function createThemedStyles<T extends StyleSheet.NamedStyles<T>>(
+  factory: (theme: AppTheme) => T,
+) {
   return function useThemedStyles() {
     const theme = useTheme();
 

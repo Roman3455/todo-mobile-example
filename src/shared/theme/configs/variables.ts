@@ -3,5 +3,5 @@ export const variables = {
   primaryButtonWidth: 90,
   leftHeaderRadius: 25,
   rightHeaderRadius: 41,
-  iconSize: 25
+  iconSize: 25,
 } as const;

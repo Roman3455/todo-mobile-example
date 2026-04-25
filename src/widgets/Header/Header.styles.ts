@@ -6,13 +6,13 @@ export const useHeaderStyles = createThemedStyles((theme) => ({
     alignSelf: "stretch",
     paddingBottom: spacing.xl,
     borderBottomLeftRadius: variables.leftHeaderRadius,
-    backgroundColor: theme.colors.header
+    backgroundColor: theme.colors.header,
   },
   title: {
     textAlign: "center",
     fontSize: fontSize.xxl,
     lineHeight: lineHeight.xxl,
     fontWeight: fontWeight.bold,
-    color: theme.colors.headerText
-  }
+    color: theme.colors.headerText,
+  },
 }));

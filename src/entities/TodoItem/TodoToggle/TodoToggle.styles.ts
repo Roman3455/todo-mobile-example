@@ -6,12 +6,12 @@ export const useTodoToggleStyles = createThemedStyles((theme) => ({
     borderRadius: radius.sm,
   },
   done: {
-    backgroundColor: theme.colors.todoItemToggleBackgroundDone
+    backgroundColor: theme.colors.todoItemToggleBackgroundDone,
   },
   undone: {
     width: variables.iconSize,
     height: variables.iconSize,
     borderWidth: 1.5,
-    borderColor: theme.colors.todoItemToggleBorderUndone
-  }
+    borderColor: theme.colors.todoItemToggleBorderUndone,
+  },
 }));

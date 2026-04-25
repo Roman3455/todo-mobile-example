@@ -7,7 +7,7 @@ export const useInputSectionStyles = createThemedStyles((theme) => ({
     paddingTop: spacing.lg,
     paddingHorizontal: spacing.lg,
     paddingBottom: spacing.xxl,
-    gap: spacing.lg
+    gap: spacing.lg,
   },
   headerRadiusContainer: {
     position: "absolute",
@@ -15,10 +15,10 @@ export const useInputSectionStyles = createThemedStyles((theme) => ({
     right: 0,
     width: variables.rightHeaderRadius,
     aspectRatio: 1,
-    backgroundColor: theme.colors.header
+    backgroundColor: theme.colors.header,
   },
   headerRadius: {
     borderTopRightRadius: variables.rightHeaderRadius,
-    backgroundColor: theme.colors.background
-  }
+    backgroundColor: theme.colors.background,
+  },
 }));

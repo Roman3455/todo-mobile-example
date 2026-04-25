@@ -7,11 +7,7 @@ export default function TodoDeleteButton() {
 
   return (
     <Pressable>
-      <CloseIcon
-        size={28}
-        strokeWidth={5}
-        strokeColor={theme.colors.todoItemDeleteButton}
-      />
+      <CloseIcon size={28} strokeWidth={5} strokeColor={theme.colors.todoItemDeleteButton} />
     </Pressable>
   );
 }
