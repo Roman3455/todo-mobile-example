@@ -14,7 +14,7 @@ export default function TaskSection() {
 
   return (
     <View style={styles.container}>
-      <TodoInfo />
+      <TodoInfo total={tasks.length} done={tasks.filter(t => t.isDone).length} />
       <TodoList tasks={tasks} />
     </View>
   );

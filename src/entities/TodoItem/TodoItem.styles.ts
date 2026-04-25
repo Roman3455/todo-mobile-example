@@ -7,7 +7,7 @@ export const useTodoItemStyles = createThemedStyles((theme) => ({
     alignItems: "center",
     justifyContent: "space-around",
     paddingHorizontal: spacing.md,
-    paddingVertical: spacing.xl,
+    paddingVertical: spacing.lg,
     borderRadius: radius.xl,
     borderWidth: 1,
     gap: spacing.md,
