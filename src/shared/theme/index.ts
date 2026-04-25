@@ -1,6 +1,6 @@
-export { components } from "./configs/components";
-export { shadows } from "./configs/shadows";
 export { spacing } from "./configs/spacing";
+export { radius } from "./configs/radius";
+export { variables } from "./configs/variables";
 export { lightTheme, darkTheme } from "./configs/themes";
 export { fontSize, fontWeight, lineHeight } from "./configs/typography";
 

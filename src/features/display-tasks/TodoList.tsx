@@ -1,17 +1,16 @@
-import {StyleSheet, View} from "react-native";
-import {TodoItem} from "@/entities/todo/ui";
+import { View } from "react-native";
+import {TodoItem} from "@/entities/TodoItem";
+import {TodoListProps} from "@/features/display-tasks/TodoList.types";
+import {useTodoListStyles} from "@/features/display-tasks/TodoList.styles";
 
-export default function TodoList() {
+export default function TodoList(props: TodoListProps) {
+  const { tasks } = props;
+  const styles = useTodoListStyles();
   return (
     <View style={styles.container}>
-      <TodoItem isDone={false} />
-      <TodoItem isDone={true} />
+      {tasks.map(({ id, title, isDone }) => (
+        <TodoItem key={id} id={id} title={title} isDone={isDone} />
+      ))}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    gap: 15
-  }
-})

@@ -1,32 +1,57 @@
+import { colors } from "./colors";
+
 // Реализация светлой темы
 export const lightTheme = {
   mode: "light",
   colors: {
-    background: "#e5ebf3",
-    accent: "#00b8d7",
-  },
-  // buttonBackground: "#2c2c2c",
-  // inputBorder: "#d9d9d9",
-  // textPrimary: "#000000",
-  // textSecondary: "#f5f5f5",
-  // textAlternative: "#757575",
-  // placeholderText: "#b3b3b3",
+    background: colors.gray["0"],
+    header: colors.azure["700"],
+    headerText: colors.gray["0"],
+    inputBackground: colors.aqua["100"],
+    inputBorder: colors.aqua["200"],
+    inputAdornment: colors.aqua["400"],
+    inputPlaceholder: colors.gray["200"],
+    inputText: colors.azure["800"],
+    buttonPrimaryBackground: colors.aqua["600"],
+    buttonPrimaryText: colors.gray["0"],
+    statisticText: colors.azure["700"],
+    todoItemBackgroundDone: colors.aqua["100"],
+    todoItemBorderDone: colors.aqua["200"],
+    todoItemBackgroundUndone: colors.aqua["200"],
+    todoItemBorderUndone: colors.aqua["300"],
+    todoItemTextUndone: colors.azure["800"],
+    todoItemTextDone: colors.aquaGray,
+    todoItemToggleBorderUndone: colors.aqua["400"],
+    todoItemToggleBackgroundDone: colors.aqua["300"],
+    todoItemDeleteButton: colors.aqua["400"]
+  }
 }
 
 // Реализация темной темы
 export const darkTheme = {
   mode: "dark",
   colors: {
-    background: "#2D2F36",
-    accent: "#00b8d7",
-  },
-  // bodyBackground: "#192230",
-  // buttonBackground: "#2c2c2c",
-  // inputBorder: "#2c2f38",
-  // textPrimary: "#e5e5e5",
-  // textSecondary: "#f5f5f5",
-  // textAlternative: "#757575",
-  // placeholderText: "#b3b3b3",
+    background: colors.gray["0"],
+    header: colors.azure["700"],
+    headerText: colors.gray["0"],
+    inputBackground: colors.aqua["100"],
+    inputBorder: colors.aqua["200"],
+    inputAdornment: colors.aqua["400"],
+    inputPlaceholder: colors.gray["200"],
+    inputText: colors.azure["800"],
+    buttonPrimaryBackground: colors.aqua["600"],
+    buttonPrimaryText: colors.gray["0"],
+    statisticText: colors.azure["700"],
+    todoItemBackgroundDone: colors.aqua["100"],
+    todoItemBorderDone: colors.aqua["200"],
+    todoItemBackgroundUndone: colors.aqua["200"],
+    todoItemBorderUndone: colors.aqua["300"],
+    todoItemTextUndone: colors.azure["800"],
+    todoItemTextDone: colors.aquaGray,
+    todoItemToggleBorderUndone: colors.aqua["400"],
+    todoItemToggleBackgroundDone: colors.aqua["300"],
+    todoItemDeleteButton: colors.aqua["400"]
+  }
 }
 
 // Контракт по типам темы

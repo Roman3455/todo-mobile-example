@@ -1,32 +1,19 @@
-import { StyleSheet, View } from "react-native";
+import { Text } from "react-native";
 import { InputField } from "@/shared/ui/InputField";
 import { Button } from "@/shared/ui/Button";
-import { theme } from "@/shared/theme";
-import { PlusIcon } from "@/shared/icons";
+import { useAddTaskFormStyles } from "./AddTaskForm.styles";
 
 export default function AddTaskForm() {
+  const styles = useAddTaskFormStyles();
+
   return (
-    <View style={styles.container}>
-      <InputField placeholder="New task title" />
-      <Button buttonStyle={styles.button} isAccent={true}>
-        <PlusIcon
-          size={30}
-          strokeWidth={2.5}
-          strokeColor={theme.lightMode.background}
-        />
-      </Button>
-    </View>
+    <InputField
+      placeholder="New task title"
+      adornment={
+        <Button buttonType="primary">
+          <Text style={styles.buttonLabel}>Add</Text>
+        </Button>
+      }
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignSelf: "stretch",
-    gap: 16,
-  },
-  button: {
-    height: theme.components.buttonAccent.height,
-    width: theme.components.buttonAccent.width,
-  },
-});

@@ -1,27 +1,24 @@
+import { SearchIcon } from "@/shared/assets/icons";
 import { InputField } from "@/shared/ui/InputField";
-import { StyleSheet, View } from "react-native";
-import {SearchIcon} from "@/shared/icons";
-import {theme} from "@/shared/theme";
+import { useSearchTaskFormStyles } from "./SearchTaskForm.styles";
+import { useTheme } from "@/shared/theme/lib";
+import { variables } from "@/shared/theme";
 
 export default function SearchTaskForm() {
+  const styles = useSearchTaskFormStyles();
+  const theme = useTheme();
+
   return (
-    <View style={styles.container}>
-      <InputField
-        placeholder="Search task"
-        adornment={
+    <InputField
+      placeholder="Search task"
+      adornmentStyle={styles.icon}
+      adornment={
         <SearchIcon
-          size={22}
+          size={variables.iconSize}
           strokeWidth={1.5}
-          stroke={theme.lightMode.buttonBackground}
+          strokeColor={theme.colors.inputAdornment}
         />
       }
-      />
-    </View>
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row"
-  },
-});

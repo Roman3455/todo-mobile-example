@@ -1,36 +1,26 @@
-import { ReactNode } from "react";
-import { Pressable, PressableProps, StyleProp, StyleSheet, ViewStyle } from "react-native";
-import { theme } from "@/shared/theme";
-
-type ButtonProps = PressableProps & {
-  children: ReactNode;
-  buttonStyle?: StyleProp<ViewStyle>;
-  isAccent: boolean;
-};
+import { Pressable } from "react-native";
+import { ButtonProps } from "./Button.types";
+import { useButtonStyles } from "./Button.styles";
 
 export default function Button(props: ButtonProps) {
-  const { children, buttonStyle, isAccent, ...rest } = props;
+  const {
+    children,
+    buttonStyle,
+    buttonType = "secondary",
+    ...rest
+  } = props;
+  const styles = useButtonStyles();
+
   return (
-    <Pressable {...rest} style={[
-      styles.button,
-      isAccent ? styles.accent : styles.transparent,
-      buttonStyle
-    ]}>
+    <Pressable
+      style={[
+        styles.button,
+        buttonType === "primary" ? styles.primary : null,
+        buttonStyle
+      ]}
+      {...rest}
+    >
       {children}
     </Pressable>
   );
 }
-
-const styles = StyleSheet.create({
-  button: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  accent: {
-    borderRadius: theme.components.borderRadiusInfinite,
-    color: theme.lightMode.background,
-    backgroundColor: theme.lightMode.accent,
-    boxShadow: theme.shadows.accentButton,
-  },
-  transparent: {}
-});
