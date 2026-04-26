@@ -1,17 +1,17 @@
 import { View, Text } from "react-native";
-import { Todo } from "./TodoItem.types";
+import { TodoItemProps } from "./TodoItem.types";
 import TodoToggle from "./TodoToggle/TodoToggle";
 import TodoDeleteButton from "./TodoDeleteButton/TodoDeleteButton";
 import { useTodoItemStyles } from "./TodoItem.styles";
 
-export default function TodoItem(props: Todo) {
-  const { title, isDone } = props;
+export default function TodoItem(props: TodoItemProps) {
+  const { id, title, isDone, onDeleteTaskButtonPress, onTaskCompleteChange } = props;
   const styles = useTodoItemStyles();
   return (
     <View style={[styles.container, isDone ? styles.done : styles.undone]}>
-      <TodoToggle isDone={isDone} />
+      <TodoToggle todoId={id} isDone={isDone} onTaskCompleteChange={onTaskCompleteChange} />
       <Text style={[styles.title, isDone ? styles.titleDone : styles.titleUndone]}>{title}</Text>
-      <TodoDeleteButton />
+      <TodoDeleteButton todoId={id} onDeleteTaskButtonPress={onDeleteTaskButtonPress} />
     </View>
   );
 }

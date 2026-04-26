@@ -12,10 +12,30 @@ export default function TaskSection() {
   ];
   const styles = useTaskSectionStyles();
 
+  const deleteAllTasks = () => {
+    console.log('Удаляем все задачи');
+  }
+
+  const deleteTask = (id: string) => {
+    console.log(`Удаляем задачу с id ${id}`);
+  }
+
+  const toggleTaskComplete = (todoId: string, isDone: boolean) => {
+    console.log(`Задача ${todoId} ${isDone ? 'выполнена' : 'не выполнена'}`);
+  }
+
   return (
     <View style={styles.container}>
-      <TodoInfo total={tasks.length} done={tasks.filter(t => t.isDone).length} />
-      <TodoList tasks={tasks} />
+      <TodoInfo
+        total={tasks.length}
+        done={tasks.filter(task => task.isDone).length}
+        onDeleteAllButtonPress={deleteAllTasks}
+      />
+      <TodoList
+        tasks={tasks}
+        onDeleteTaskButtonPress={deleteTask}
+        onTaskCompleteChange={toggleTaskComplete}
+      />
     </View>
   );
 }
